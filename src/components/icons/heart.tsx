@@ -1,3 +1,5 @@
+import { ComponentProps } from 'react'
+
 export const Heart = (props: ComponentProps<'div'>) => {
   return (
     <div {...props}>
