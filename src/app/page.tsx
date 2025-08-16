@@ -18,7 +18,6 @@ export default function Home() {
         <CldUploadButton
           className="text-white"
           onSuccess={(result: UploadResult) => {
-            console.log('result: ', result)
             setImageId(result.info.public_id)
           }}
           uploadPreset="soultrust-img-gallery"

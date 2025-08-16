@@ -14,6 +14,14 @@ export default async function GalleryPage() {
     .max_results(30)
     .execute()) as { resources: SearchResult[] }
 
+  const MAX_COLUMNS = 4
+
+  function getColumns(colIndex: number) {
+    return results.resources.filter(
+      (resource, idx) => idx % MAX_COLUMNS === colIndex,
+    )
+  }
+
   return (
     <section>
       <div className="flex flex-col gap-8">
@@ -22,15 +30,21 @@ export default async function GalleryPage() {
           <UploadButton />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          {results.resources.map((result) => (
-            <CloudinaryImage
-              key={result.public_id}
-              imagedata={result}
-              width="400"
-              height="300"
-              alt="an image of something"
-            />
-          ))}
+          {[getColumns(0), getColumns(1), getColumns(2), getColumns(3)].map(
+            (column, idx) => (
+              <div key={idx} className="flex flex-col gap-4">
+                {column.map((result) => (
+                  <CloudinaryImage
+                    key={result.public_id}
+                    imagedata={result}
+                    width="400"
+                    height="300"
+                    alt="an image of something"
+                  />
+                ))}
+              </div>
+            ),
+          )}
         </div>
       </div>
     </section>
