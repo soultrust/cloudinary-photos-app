@@ -4,6 +4,7 @@ import { CloudinaryImage } from './cloudinary-image'
 
 export type SearchResult = {
   public_id: string
+  tags: string[]
 }
 
 export default async function GalleryPage() {
@@ -36,7 +37,7 @@ export default async function GalleryPage() {
                 {column.map((result) => (
                   <CloudinaryImage
                     key={result.public_id}
-                    imagedata={result}
+                    imageData={result}
                     width="400"
                     height="300"
                     alt="an image of something"

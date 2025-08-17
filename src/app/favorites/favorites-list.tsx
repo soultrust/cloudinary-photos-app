@@ -20,7 +20,7 @@ export default function FavoritesList({
       {resources.map((result) => (
         <CloudinaryImage
           key={result.public_id}
-          imagedata={result}
+          imageData={result}
           width="400"
           height="300"
           alt="an image of something"
