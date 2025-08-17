@@ -1,6 +1,5 @@
 'use client'
 
-import { CloudinaryImage } from '@/app/gallery/cloudinary-image'
 import type { SearchResult } from '@/app/gallery/page'
 import { ReactNode } from 'react'
 
