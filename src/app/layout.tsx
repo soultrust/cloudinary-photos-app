@@ -30,11 +30,7 @@ const SideMenu = () => {
             Manage
           </h2>
           <div className="space-y-1">
-            <Button
-              asChild
-              variant="secondary"
-              className="w-full justify-start"
-            >
+            <Button asChild variant="ghost" className="w-full justify-start">
               <Link href="/gallery">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
